@@ -1,0 +1,322 @@
+.App {
+  text-align: center;
+}
+
+/* Denim background layer */
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('assets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 0.90;
+}
+
+/* Sticky header with branded title */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(15, 28, 46, 0.85);
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #bfa77f;
+}
+
+/* Title styling */
+.app-title {
+  font-family: 'Courier New', monospace;
+  font-size: 1.8rem;
+  color: #bfa77f;
+  margin: 0;
+}
+
+/* Dropdown menu styling */
+.nav-dropdown {
+  background-color: #0f1c2e;
+  color: #bfa77f;
+  border: 2px solid #bfa77f;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.nav-dropdown option:disabled {
+  color: #777;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
+
+/* Avatar styling */
+img[alt="User avatar"] {
+  border: 2px solid #bfa77f;
+}
+
+/* Remove unused pill nav styles */
+.nav-pills .nav-link,
+.nav-pills .nav-link:hover,
+.nav-pills .nav-link.active {
+  all: unset;
+}
+
+/* Login screen layout */
+.login-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(15, 28, 46, 0.85);
+  padding: 40px 30px;
+  border-radius: 12px;
+  border: 2px solid #bfa77f;
+  max-width: 320px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.login-logo {
+  max-height: 200px;
+  margin-bottom: 20px;
+}
+
+.login-welcome {
+  color: #bfa77f;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Google login button */
+.google-login {
+  background-color: #0f1c2e;
+  color: #bfa77f;
+  border: 2px solid #bfa77f;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.google-login:hover {
+  background-color: #1a2a3f;
+}
+
+.google-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+/* Form field spacing */
+.form-control {
+  margin-bottom: 12px !important;
+}
+
+/* Container padding to prevent Save Flip button clipping */
+.container {
+  padding-bottom: 60px;
+}
+
+/* Checkbox layout fix */
+.form-check {
+  margin-right: 15px;
+  margin-bottom: 10px;
+  display: inline-block;
+  min-width: 100px;
+}
+
+.form-check-input {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.form-check-label {
+  color: #bfa77f;
+  font-weight: 500;
+  
+}
+
+/* Description Generator title fix */
+.description-title {
+  color: #bfa77f;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* About screen container */
+.about-container {
+  background-color: #bfa77f;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 20px auto 40px auto;
+  color: #0f1c2e;
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: left;
+  opacity: 0.75;
+}
+
+/* Global page titles */
+.page-title {
+  color: #bfa77f;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.page-title-about {
+  color: #000000;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Global readable subtext */
+.page-text {
+  color: #bfa77f;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.page-text-about {
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.google-inline-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.user-avatar-inline {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #bfa77f;
+}
+.user-name {
+  color: #bfa77f;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.row + .row {
+  margin-top: 12px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.checkbox-section {
+  margin-bottom: 20px;
+}
+
+.checkbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.loading-screen {
+  height: 100vh;
+  background-color: #1a1a1a; /* or denim texture */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.welcome-line {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.loading-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.loading-quote {
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.85;
+  margin-top: 20px;
+  max-width: 80%;
+  transition: opacity 0.5s ease;
+}
+
+.loading-footer {
+  position: absolute;
+  bottom: 40px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
