@@ -31,14 +31,19 @@ function App() {
 useEffect(() => {
   getRedirectResult(auth)
     .then((result) => {
+      console.log("Redirect result:", result);
       if (result?.user) {
+        console.log("User from redirect:", result.user);
         setUser(result.user);
+      } else {
+        console.log("No user returned from redirect");
       }
     })
     .catch((error) => {
       console.error("Redirect error:", error.code, error.message);
     });
 }, []);
+
 
 // useEffect(() => {
 //   const unsubscribe = auth.onAuthStateChanged((user) => {
