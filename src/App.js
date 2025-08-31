@@ -28,21 +28,21 @@ function App() {
   return () => clearTimeout(timer);
 }, []);
 
-useEffect(() => {
-  getRedirectResult(auth)
-    .then((result) => {
-      console.log("Redirect result:", result);
-      if (result?.user) {
-        console.log("User from redirect:", result.user);
-        setUser(result.user);
-      } else {
-        console.log("No user returned from redirect");
-      }
-    })
-    .catch((error) => {
-      console.error("Redirect error:", error.code, error.message);
-    });
-}, []);
+// useEffect(() => {
+//   getRedirectResult(auth)
+//     .then((result) => {
+//       console.log("Redirect result:", result);
+//       if (result?.user) {
+//         console.log("User from redirect:", result.user);
+//         setUser(result.user);
+//       } else {
+//         console.log("No user returned from redirect");
+//       }
+//     })
+//     .catch((error) => {
+//       console.error("Redirect error:", error.code, error.message);
+//     });
+// }, []);
 
 
 // useEffect(() => {
@@ -97,7 +97,16 @@ useEffect(() => {
 
   const handleLogin = () => {
   const provider = new GoogleAuthProvider();
-  signInWithRedirect(auth, provider);
+  // signInWithRedirect(auth, provider);
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    console.log("Popup result:", result);
+    setUser(result.user);
+  })
+  .catch((error) => {
+    console.error("Popup login error:", error.code, error.message);
+  });
+
 };
 
   const handleFlipSave = async (flipData) => {
