@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 import { auth } from "./firebase";
-import { signInWithRedirect, GoogleAuthProvider, getRedirectResult, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { Container, Form, Row, Col, Button } from "react-bootstrap";
 import FlipForm from "./FlipForm";
 import FlipHistory from "./FlipHistory";
