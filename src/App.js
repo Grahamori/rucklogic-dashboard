@@ -28,43 +28,16 @@ function App() {
   return () => clearTimeout(timer);
 }, []);
 
-// useEffect(() => {
-//   getRedirectResult(auth)
-//     .then((result) => {
-//       console.log("Redirect result:", result);
-//       if (result?.user) {
-//         console.log("User from redirect:", result.user);
-//         setUser(result.user);
-//       } else {
-//         console.log("No user returned from redirect");
-//       }
-//     })
-//     .catch((error) => {
-//       console.error("Redirect error:", error.code, error.message);
-//     });
-// }, []);
 
-
-// useEffect(() => {
-//   const unsubscribe = auth.onAuthStateChanged((user) => {
-//     console.log("Auth state changed:", user); // 👈 Add this
-//     if (user) {
-//       setUser(user);
-//     }
-//     setCheckingAuth(false);
-//   });
-//   return () => unsubscribe();
-// }, []);
 
 useEffect(() => {
   const unsubscribe = auth.onAuthStateChanged((user) => {
-    const log = user ? `Logged in as ${user.displayName}` : "No user";
-    alert(log); // 👈 Shows a popup on your phone
     setUser(user);
     setCheckingAuth(false);
   });
   return () => unsubscribe();
 }, []);
+
 
 
 
@@ -84,16 +57,7 @@ useEffect(() => {
     personality: ["sarcasm", "resale"]
   });
 
-  // const handleLogin = async () => {
-  //   const auth = getAuth(app);
-  //   const provider = new GoogleAuthProvider();
-  //   try {
-  //     const result = await signInWithPopup(auth, provider);
-  //     setUser(result.user);
-  //   } catch (error) {
-  //     console.error("Login failed:", error);
-  //   }
-  // };
+
 
   const handleLogin = () => {
   const provider = new GoogleAuthProvider();
@@ -222,7 +186,7 @@ useEffect(() => {
             <Row className="mt-3">
   <Col md={12}>
     <Button
-      variant="outline-success"
+      variant="success"
       onClick={async () => {
         if (!user) return;
         const descriptionText = generateDescription(input);
