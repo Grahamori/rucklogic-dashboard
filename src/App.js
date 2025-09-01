@@ -195,11 +195,11 @@ useEffect(() => {
       style: input.style
     };
     await saveDescription(user.uid, payload);
-    setInput({
-      style: "",
-      keywords: "",
-      tone: ""
-    });
+    setInput((prev) => ({
+  ...prev,
+  style: "",
+  keywords: ""
+}));
     alert("Description saved!");
   }}
 >
