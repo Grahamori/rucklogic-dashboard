@@ -186,20 +186,25 @@ useEffect(() => {
             <Row className="mt-3">
   <Col md={12}>
     <Button
-      variant="success"
-      onClick={async () => {
-        if (!user) return;
-        const descriptionText = generateDescription(input);
-        const payload = {
-          text: descriptionText,
-          style: input.style
-        };
-        await saveDescription(user.uid, payload);
-        alert("Description saved!");
-      }}
-    >
-      💾 Save Description
-    </Button>
+  variant="success"
+  onClick={async () => {
+    if (!user) return;
+    const descriptionText = generateDescription(input);
+    const payload = {
+      text: descriptionText,
+      style: input.style
+    };
+    await saveDescription(user.uid, payload);
+    setInput({
+      style: "",
+      keywords: "",
+      tone: ""
+    });
+    alert("Description saved!");
+  }}
+>
+  💾 Save Description
+</Button>
   </Col>
 </Row>
           </div>
