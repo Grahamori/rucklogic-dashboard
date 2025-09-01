@@ -11,7 +11,7 @@ import { updateFlip, saveFlip, saveDescription } from "./firestore";
 import background from './assets/background.png';
 import logo from './assets/logo.png';
 import LoadingScreen from "./LoadingScreen";
-import titleLogo from './assets/title-logo.png';
+import titleLogo from './assets/title.png';
 
 function App() {
   const [user, setUser] = useState(null);
