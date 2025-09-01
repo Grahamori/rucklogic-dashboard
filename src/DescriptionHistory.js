@@ -32,38 +32,48 @@ function DescriptionHistory({ user }) {
   };
 
   return (
-    <div className="container mt-4">
-      {/* <h3 className="mb-4">📜 Description History</h3> */}
-      <Row xs={1} md={2} lg={3} className="g-4">
-        {descriptions.map((desc) => (
-          <Col key={desc.id}>
-            <Card className="shadow-sm h-100">
-              <Card.Body>
-                <Card.Title className="text-muted small">
-                  Style: {desc.style}
-                </Card.Title>
-                <Card.Text>{desc.text}</Card.Text>
-                <div className="d-flex justify-content-between">
-                  <Button
-                    variant="outline-secondary"
-                    size="sm"
-                    onClick={() => setEditingDesc(desc)}
-                  >
-                    Edit
-                  </Button>
-                  <Button
-                    variant="outline-danger"
-                    size="sm"
-                    onClick={() => handleDelete(desc.id)}
-                  >
-                    Delete
-                  </Button>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+  <div className="container mt-4">
+    {/* <h3 className="mb-4">📜 Description History</h3> */}
+    <Row xs={1} md={2} lg={3} className="g-4">
+      {descriptions.map((desc) => (
+        <Col key={desc.id}>
+          <Card className="shadow-sm h-100">
+            <Card.Body>
+              <Card.Title className="text-muted small">
+                Style: {desc.style}
+              </Card.Title>
+              <Card.Text>{desc.text}</Card.Text>
+              <div className="d-flex justify-content-between">
+                <Button
+                  variant="outline-secondary"
+                  size="sm"
+                  onClick={() => setEditingDesc(desc)}
+                >
+                  Edit
+                </Button>
+                <Button
+                  variant="outline-primary"
+                  size="sm"
+                  onClick={() => navigator.clipboard.writeText(desc.text)}
+                >
+                  Copy
+                </Button>
+                <Button
+                  variant="outline-danger"
+                  size="sm"
+                  onClick={() => handleDelete(desc.id)}
+                >
+                  Delete
+                </Button>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+  </div>
+);
+
 
       <EditDescriptionModal
         show={!!editingDesc}
