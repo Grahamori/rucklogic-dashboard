@@ -150,21 +150,21 @@ useEffect(() => {
 
             <Row>
               <Col md={2}><Form.Control placeholder="Fit" value={input.fit} onChange={handleChange("fit")} /></Col>
-              <Col md={2}>
+              <Col md={2} style={{ marginBottom: "1rem" }}>
                 <Form.Select value={input.grade} onChange={handleChange("grade")}>
                   <option value="A">Grade A</option>
                   <option value="B">Grade B</option>
                   <option value="C">Grade C</option>
                 </Form.Select>
               </Col>
-              <Col md={2}>
+              <Col md={2} style={{ marginBottom: "1rem" }}>
                 <Form.Select value={input.platform} onChange={handleChange("platform")}>
                   <option value="Depop">Depop</option>
                   <option value="Vinted">Vinted</option>
                   <option value="eBay">eBay</option>
                 </Form.Select>
               </Col>
-              <Col md={2}>
+              <Col md={2} style={{ marginBottom: "1rem" }}>
                 <Form.Select value={input.style} onChange={handleChange("style")}>
                   <option value="neutral">Neutral</option>
                   <option value="witty">Witty</option>
