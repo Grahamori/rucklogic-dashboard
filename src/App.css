@@ -26,11 +26,11 @@
   background-color: rgba(15, 28, 46, 0.85);
   padding: 10px 20px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   border-bottom: 1px solid #bfa77f;
 }
+
 
 /* Title styling */
 .app-title {
