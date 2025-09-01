@@ -11,6 +11,7 @@ import { updateFlip, saveFlip, saveDescription } from "./firestore";
 import background from './assets/background.png';
 import logo from './assets/logo.png';
 import LoadingScreen from "./LoadingScreen";
+import titleLogo from './assets/title-logo.png';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -274,7 +275,13 @@ useEffect(() => {
 
       {user && (
         <header className="app-header">
-          <h1 className="app-title">RuckLogic</h1>
+          {/* <h1 className="app-title">RuckLogic</h1> */}
+          <img
+            src={titleLogo}
+            alt="RuckLogic"
+            className="title-logo"
+          />
+
           <select
             className="nav-dropdown"
             value={view}

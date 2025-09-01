@@ -40,6 +40,13 @@
   margin: 0;
 }
 
+.title-logo {
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+
 /* Dropdown menu styling */
 .nav-dropdown {
   background-color: #0f1c2e;
