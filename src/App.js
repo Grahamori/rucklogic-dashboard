@@ -197,9 +197,14 @@ useEffect(() => {
     await saveDescription(user.uid, payload);
     setInput((prev) => ({
   ...prev,
-  style: "",
-  keywords: ""
+  brand: "",
+  itemType: "",
+  size: "",
+  colour: "",
+  material: "",
+  fit: ""
 }));
+
     alert("Description saved!");
   }}
 >
