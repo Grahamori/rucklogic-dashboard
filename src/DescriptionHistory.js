@@ -55,9 +55,11 @@ function DescriptionHistory({ user }) {
                     variant="outline-primary"
                     size="sm"
                     onClick={() => navigator.clipboard.writeText(desc.text)}
+                    title="Copy to clipboard"
                   >
-                    Copy
+                    📋
                   </Button>
+
                   <Button
                     variant="outline-danger"
                     size="sm"
